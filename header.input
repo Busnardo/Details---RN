@@ -1,6 +1,6 @@
-  //Para criar um header em com a biblioteca de navegação React Navigation, você pode usar o componente Header da biblioteca react-navigation-stack.
-Este componente permite personalizar o conteúdo do cabeçalho, como o título da página, botões de ação e outras informações.
-Para usá-lo, você precisa importá-lo do react-navigation-stack e adicionar o cabeçalho na definição de rota do componente.
+//Para criar um header em com a biblioteca de navegação React Navigation, você pode usar o componente Header da biblioteca react-navigation-stack.
+//Este componente permite personalizar o conteúdo do cabeçalho, como o título da página, botões de ação e outras informações.
+//Para usá-lo, você precisa importá-lo do react-navigation-stack e adicionar o cabeçalho na definição de rota do componente.
 
 import React from 'react';
 import { View, Text, Button } from 'react-native';
