@@ -1,0 +1,51 @@
+//Para criar um input de texto, é algo muito semelhante à imagem, seguindo a única distinção de que:
+//para exibir o texto deve ser feito usando um componente de texto como o Text do React Native e passando o texto para a propriedade children.
+
+import React, { useState, useEffect } from 'react';
+import { View, Text, Image } from 'react-native';
+import SQLite from 'react-native-sqlite-storage';
+
+const db = SQLite.openDatabase({
+  name: 'myDatabase.db',
+  location: 'default',
+});
+
+export default function ImageImporter() {
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    db.transaction((tx) => {
+      tx.executeSql(
+        'SELECT * FROM images',
+        [],
+        (tx, results) => {
+          const len = results.rows.length;
+          const imagesArray = [];
+
+          for (let i = 0; i < len; i++) {
+            const row = results.rows.item(i);
+            const imageData = row.image_data;
+
+            // Converte a imagem para base64
+            const base64Image = imageData.toString('base64');
+
+            imagesArray.push(base64Image);
+          }
+
+          setImages(imagesArray);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    });
+  }, []);
+
+  return (
+    <View>
+      {images.map((image, index) => (
+        <Image key={index} source={{ uri: `data:image/png;base64,${image}` }} />
+      ))}
+    </View>
+  );
+}
