@@ -1,10 +1,10 @@
-Para criar um importador de imagens de um banco de dados em React Native você deve:
-  1- Conectar-se ao banco de dados: utilizando uma biblioteca para se conectar ao banco, como o react-native-sqlite-storage ou o react-native-sqlite-2. 
-  2- Precisará selecionar as imagens do banco de dados que deseja importar. Isso pode ser feito com uma consulta SQL.
-  3- Para mostrar as imagens na aplicação, você precisará converter as imagens em um formato adequado, como base64 ou Blob.
-  4- Você precisa armazenar as imagens em uma variável de estado ou em um banco de dados local como o AsyncStorage.
-  5- E finalmente, você precisará exibir as imagens importadas na aplicação.
-Isso pode ser feito usando um componente de imagem como o Image do React Native e passando o caminho da imagem para a propriedade source.
+//Para criar um importador de imagens de um banco de dados em React Native você deve:
+//  1- Conectar-se ao banco de dados: utilizando uma biblioteca para se conectar ao banco, como o react-native-sqlite-storage ou o react-native-sqlite-2. 
+//  2- Precisará selecionar as imagens do banco de dados que deseja importar. Isso pode ser feito com uma consulta SQL.
+//  3- Para mostrar as imagens na aplicação, você precisará converter as imagens em um formato adequado, como base64 ou Blob.
+//  4- Você precisa armazenar as imagens em uma variável de estado ou em um banco de dados local como o AsyncStorage.
+//  5- E finalmente, você precisará exibir as imagens importadas na aplicação.
+//Isso pode ser feito usando um componente de imagem como o Image do React Native e passando o caminho da imagem para a propriedade source.
 
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image } from 'react-native';
